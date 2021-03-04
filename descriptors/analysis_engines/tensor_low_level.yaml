@@ -2,8 +2,17 @@ ae:
   name: mongo_low_level
 fixedflow:
 #  - Trigger
+#  - CollectionReader
+#  - ImagePreprocessor
+#  - TenserFlowAnnotator
   - CollectionReader
   - ImagePreprocessor
-  - TenserFlowAnnotator
+  - PointCloudFilter
+  - NormalEstimator
+  - PlaneAnnotator
+  - PointCloudClusterExtractor
+  - CaffeAnnotator
+  - KnnAnnotator
+  - clusterLabeler
 CollectionReader:
-  camera_config_files: ['config_mongodb_playback.ini']
+  camera_config_files: ['config_tensorflow.ini']
